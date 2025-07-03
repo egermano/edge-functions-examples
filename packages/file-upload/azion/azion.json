@@ -1,0 +1,36 @@
+{
+  "name": "file-upload",
+  "bucket": "",
+  "preset": "javascript",
+  "env": "production",
+  "prefix": "20250701190204",
+  "not-first-run": true,
+  "function": {
+    "id": 47059,
+    "name": "__DEFAULT__",
+    "file": ".edge/worker.js",
+    "args": "./azion/args.json",
+    "instance-id": 43524,
+    "instance-name": "__DEFAULT__",
+    "cache-id": 246116
+  },
+  "application": {
+  },
+  "domain": {
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": [],
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 440162,
+        "name": "Execute Edge Function",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": []
+}

@@ -31,7 +31,7 @@ app.post("/upload", async (c) => {
       await createObject({
         bucket: process.env.BUCKET_NAME!,
         key: file.name,
-        // @ts-ignore
+        // @ts-expect-error Hono has no types for form-data
         content: await file.arrayBuffer(),
       });
 

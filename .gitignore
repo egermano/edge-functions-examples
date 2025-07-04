@@ -49,3 +49,6 @@ coverage/
 
 # Mac system files
 .DS_Store
+
+.edge/
+azion-*.temp.ts

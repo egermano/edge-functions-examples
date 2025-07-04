@@ -51,3 +51,4 @@ coverage/
 .DS_Store
 
 .edge/
+azion-*.temp.ts

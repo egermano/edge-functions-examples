@@ -7,15 +7,21 @@
   "scripts": {
     "dev": "DEBUG=true pnpm dlx edge-functions@5.0.2 dev",
     "build": "pnpm dlx edge-functions@5.0.2 build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
-    "azion": "^1.20.1",
-    "dotenv": "^17.0.1",
-    "hono": "^4.8.3"
+    "azion": "^1.20.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "hono": "^4.8.3",
+    "jest": "^30.0.4",
+    "supertest": "^7.1.1",
+    "ts-jest": "^29.4.0"
   }
 }

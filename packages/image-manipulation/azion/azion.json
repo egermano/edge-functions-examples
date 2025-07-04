@@ -1,0 +1,42 @@
+{
+  "name": "image-manipulation",
+  "bucket": "",
+  "preset": "typescript",
+  "env": "production",
+  "prefix": "20250704175548",
+  "not-first-run": true,
+  "function": {
+    "id": 47176,
+    "name": "__DEFAULT__",
+    "file": ".edge/worker.js",
+    "args": "./azion/args.json",
+    "instance-id": 43666,
+    "instance-name": "__DEFAULT__",
+    "cache-id": 246939
+  },
+  "application": {
+    "id": 1751668829,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 1751668756,
+    "name": "image-manipulation",
+    "domain_name": "jxll7y3ej2.map.azionedge.net",
+    "url": "https://jxll7y3ej2.map.azionedge.net"
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": [],
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 445045,
+        "name": "Execute Edge Function",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": []
+}

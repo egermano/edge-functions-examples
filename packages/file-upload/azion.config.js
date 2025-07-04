@@ -5,7 +5,5 @@ export default defineConfig({
     entry: "src/index.ts",
     worker: true,
     preset: "typescript",
-    target: "es2020",
-    module: "esnext",
   },
 });

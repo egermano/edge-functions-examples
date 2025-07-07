@@ -15,22 +15,22 @@
     "cache-id": 246116
   },
   "application": {
+    "id": 0,
+    "name": "__DEFAULT__"
   },
   "domain": {
+    "id": 0,
+    "name": "__DEFAULT__",
+    "domain_name": "",
+    "url": ""
   },
   "rt-purge": {
     "purge_on_publish": true
   },
-  "origin": [],
+  "origin": null,
   "rules-engine": {
     "created": false,
-    "rules": [
-      {
-        "id": 440162,
-        "name": "Execute Edge Function",
-        "phase": "request"
-      }
-    ]
+    "rules": null
   },
-  "cache-settings": []
+  "cache-settings": null
 }

@@ -1,0 +1,22 @@
+{
+  "name": "simple-ts-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "dev": "DEBUG=true pnpm dlx edge-functions@5.0.2 dev",
+    "build": "pnpm dlx edge-functions@5.0.2 build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "aziontech",
+  "license": "ISC",
+  "dependencies": {
+    "azion": "1.19.1",
+    "itty-router": "^4.2.0",
+    "puppeteer": "^24.11.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  }
+}

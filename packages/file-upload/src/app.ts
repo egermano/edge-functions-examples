@@ -2,13 +2,13 @@ import type { AzionBucketObject, AzionStorageResponse } from "azion/storage";
 import { createObject } from "azion/storage";
 import { Hono } from "hono";
 
-
 const app = new Hono();
 
 app.post("/upload", async (c) => {
   const body = await c.req.parseBody();
   const file = body["file"]; // File | string
 
+  // First check if file is a valid File object
   if (
     !file ||
     typeof file !== "object" ||
@@ -17,13 +17,10 @@ app.post("/upload", async (c) => {
     return c.json({ message: "Invalid file" }, 400);
   }
 
+  // Check if file size exceeds 2MB limit
   const maxSize = 2 * 1024 * 1024; // 2MB
   if (file.size > maxSize) {
     return c.json({ message: "File size exceeds 2MB limit" }, 413);
-  }
-
-  if (!file) {
-    return c.json({ message: "File not found" }, 400);
   }
 
   try {
@@ -31,7 +28,7 @@ app.post("/upload", async (c) => {
       await createObject({
         bucket: process.env.BUCKET_NAME!,
         key: file.name,
-        // @ts-expect-error Hono has no types for form-data
+        // @ts-expect-error content is wrongly typed
         content: await file.arrayBuffer(),
       });
 
@@ -41,12 +38,21 @@ app.post("/upload", async (c) => {
 
     if (newObject) {
       console.log(`Object created with key: ${newObject.key}`);
-      console.log(`Object content: ${newObject.content}`);
     } else {
       console.error("Failed to create object", error);
     }
 
-    return c.json({ message: "File uploaded successfully" });
+    // @ts-expect-error content is wrongly typed
+    const content = new Uint8Array(newObject.content);
+
+    return c.body(content, {
+      status: 200,
+      headers: {
+        "Content-Type": file.type,
+        "Content-Disposition": `attachment; filename="${newObject?.key}"`,
+        "Content-Length": newObject?.size?.toString() ?? "0",
+      },
+    });
   } catch (error) {
     console.error("Error uploading file:", error);
     return c.json({ message: "Error uploading file" }, 500);

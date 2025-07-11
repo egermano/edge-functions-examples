@@ -1,5 +1,5 @@
 {
-  "name": "pupeeteer",
+  "name": "browserless",
   "bucket": "",
   "preset": "typescript",
   "env": "production",

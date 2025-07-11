@@ -52,13 +52,19 @@ describe("File Upload API", () => {
   });
 
   it("should return 200 for successful upload", async () => {
+    const buffer = Buffer.from("test file content");
+    const file = new File([buffer], "test.txt", { type: "text/plain" });
+
     (createObject as jest.Mock).mockResolvedValue({
-      data: { key: "test.txt" },
+      data: {
+        key: file.name,
+        content: await file.arrayBuffer(),
+        size: file.size,
+      },
     });
 
-    const buffer = Buffer.from("test file content");
     const formData = new FormData();
-    formData.append("file", new File([buffer], "test.txt"));
+    formData.append("file", file);
 
     const req = new Request("http://localhost/upload", {
       method: "POST",
@@ -67,6 +73,11 @@ describe("File Upload API", () => {
     const res = await app.request(req);
 
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ message: "File uploaded successfully" });
+    expect(res.headers.get("Content-Type")).toBe(file.type);
+    expect(res.headers.get("Content-Disposition")).toBe(
+      `attachment; filename="${file.name}"`,
+    );
+    expect(res.headers.get("Content-Length")).toBe(String(file.size));
+    expect(await res.arrayBuffer()).toEqual(await file.arrayBuffer());
   });
 });

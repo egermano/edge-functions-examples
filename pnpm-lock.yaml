@@ -12,6 +12,25 @@ importers:
         specifier: ^30.0.4
         version: 30.0.4(@types/node@24.0.10)
 
+  packages/browserless:
+    dependencies:
+      azion:
+        specifier: 1.19.1
+        version: 1.19.1(@babel/core@7.28.0)(@fastly/js-compute@3.34.0)
+      hono:
+        specifier: ^4.8.3
+        version: 4.8.3
+      puppeteer:
+        specifier: ^24.11.2
+        version: 24.11.2(typescript@5.8.3)
+      puppeteer-core:
+        specifier: ^24.12.1
+        version: 24.12.1
+    devDependencies:
+      typescript:
+        specifier: ^5.4.2
+        version: 5.8.3
+
   packages/file-upload:
     dependencies:
       azion:
@@ -54,25 +73,6 @@ importers:
       typescript-eslint:
         specifier: ^8.35.1
         version: 8.35.1(eslint@9.30.1)(typescript@5.8.3)
-
-  packages/pupeeteer:
-    dependencies:
-      azion:
-        specifier: 1.19.1
-        version: 1.19.1(@babel/core@7.28.0)(@fastly/js-compute@3.34.0)
-      hono:
-        specifier: ^4.8.3
-        version: 4.8.3
-      puppeteer:
-        specifier: ^24.11.2
-        version: 24.11.2(typescript@5.8.3)
-      puppeteer-core:
-        specifier: ^24.12.1
-        version: 24.12.1
-    devDependencies:
-      typescript:
-        specifier: ^5.4.2
-        version: 5.8.3
 
 packages:
 

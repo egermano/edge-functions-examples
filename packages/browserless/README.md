@@ -1,35 +1,86 @@
-# Simple Typescript Router
+# Browserless
 
-The Azion **Simple Typescript Router** is designed to simplify and enhance the deployment process for Typescript applications directly on the edge of the network.
+This project demonstrates how to implement a browserless application using edge functions. It provides sample code and best practices for running browserless applications efficiently and securely in a modern web application.
+
+## Deployment Instructions
+
+To deploy this project, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/edge-functions-examples.git
+   cd edge-functions-examples/packages/browserless
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Configure environment variables:**
+
+   Copy `.env.example` to `.env` and update the values as needed.
+
+4. **Running the project locally:**
+
+   ```bash
+   pnpm build
+   ```
+
+5. **Deploy to your edge platform:**
+
+   Ensure you have the [Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/) installed and configured.
+
+   ```bash
+   azion deploy
+   ```
+
+   After the deployment is complete, you’ll receive a domain to access your Hono project on the Azion Platform.
+
+   Wait a few minutes so the propagation takes place, and then access your application using the provided domain, which should be similar to `https://xxxxxxx.map.azionedge.net`.
+
+> **Note:** Ensure to create a bucket before deploying the function. You can do this through the Azion Platform or using the Azion CLI.
 
 ## Usage Information
 
-_Install dependencies_
+### Install dependencies
 
 ```bash
 
-npm install
-#or
-yarn install
-#or
-pnmp install
+pnpm install
 
 ```
 
-To start using this template with **Vulcan**, you need to:
-
-_Build Command_: To run the application build command
+### Build Command
 
 ```bash
 
-npx edge-functions@latest build
+pnpm dlx edge-functions@latest build
 
 ```
 
-_Run local DEV_: To run the application locally with Vulcan
+or
 
 ```bash
 
-npx edge-functions@latest dev
+pnpm run build
+
+```
+
+### Run local DEV
+
+```bash
+
+pnpm dlx edge-functions@latest dev
+
+```
+
+or
+
+```bash
+
+pnpm run dev
 
 ```

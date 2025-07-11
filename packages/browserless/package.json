@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "license": "MIT",
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.13.1",
   "dependencies": {
     "azion": "1.19.1",
     "hono": "^4.8.3",

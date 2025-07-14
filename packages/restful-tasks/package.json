@@ -5,16 +5,24 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "aziontech",
   "license": "ISC",
   "dependencies": {
+    "@hono/node-server": "^1.16.0",
     "azion": "1.19.1",
     "hono": "^4.5.3"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.0.4",
+    "supertest": "^7.1.1",
+    
+    "ts-jest": "^29.4.0",
     "typescript": "^5.4.2"
   }
 }

@@ -1,0 +1,20 @@
+{
+  "name": "restful-tasks",
+  "version": "1.0.0",
+  "description": "restful tasks",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "aziontech",
+  "license": "ISC",
+  "dependencies": {
+    "azion": "1.19.1",
+    "hono": "^4.5.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  }
+}

@@ -14,6 +14,7 @@ This repository contains examples demonstrating how to use edge functions on the
 - WIP: [Image Manipulation](packages/image-manipulation)
 - [File Upload](packages/file-upload)
 - [Resend](packages/resend)
+- [Restful Tasks](packages/restful-tasks)
 
 ## Resources
 

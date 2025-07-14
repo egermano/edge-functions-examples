@@ -8,6 +8,13 @@ This repository contains examples demonstrating how to use edge functions on the
 2. Review the example folders for specific use cases.
 3. Follow the instructions in each example to deploy on Azion.
 
+## Examples
+
+- [Browserless](packages/browserless)
+- WIP: [Image Manipulation](packages/image-manipulation)
+- [File Upload](packages/file-upload)
+- [Resend](packages/resend)
+
 ## Resources
 
 - [Azion Documentation](https://www.azion.com/en/documentation/)
